@@ -1,116 +1,109 @@
-# ☕ Cafe Sales Data Cleaning Pipeline
+# Data Cleaning Pipeline
 
-## 📌 Project Overview
+## Project Overview
 
-This project demonstrates how to clean a real-world dirty dataset using **Python**, **Pandas**, and **Object-Oriented Programming (OOP)**. The goal is to build an automated data cleaning pipeline that reads raw data, cleans it, and exports the cleaned data for further analysis.
+This project is a simple Data Cleaning Pipeline developed using **Python**, **Pandas**, and **Object-Oriented Programming (OOP)**. It cleans the Google Play Store dataset by handling missing values, removing duplicate records, cleaning columns, and exporting the cleaned data.
 
 ---
 
-## 📂 Project Structure
+## Features
+
+- Load dataset
+- Display dataset information
+- Check missing values
+- Check duplicate records
+- Remove duplicates
+- Clean Installs column
+- Clean Price column
+- Clean Size column
+- Clean Reviews column
+- Handle missing values
+- Display dataset summary
+- Export cleaned dataset to CSV
+- Export cleaned dataset to JSON
+
+---
+
+## Technologies Used
+
+- Python
+- Pandas
+- Object-Oriented Programming (OOP)
+
+---
+
+## Project Structure
 
 ```
 Data-Cleaning-Pipeline/
-│── main.py
-│── cleaner.py
-│── exporter.py
-│── requirements.txt
-│── README.md
-│── .gitignore
 │
 ├── input/
-│      └── dirty_cafe_sales1.csv
+│   └── googleplaystore.csv
 │
 ├── output/
+│   ├── cleaned_googleplaystore.csv
+│   └── cleaned_googleplaystore.json
 │
-└── tests/
+├── tests/
+│   └── test_cleaner.py
+│
+├── cleaner.py
+├── exporter.py
+├── main.py
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-## 📊 Dataset
+## Dataset
 
-- **Dataset Name:** Dirty Cafe Sales Dataset
-- **Rows:** 1,020
-- **Original Rows:** 1,000
-- **Added Duplicate Rows:** 20
+**Dataset Name:** Google Play Store Apps
 
-The dataset contains intentionally dirty data for practicing data cleaning techniques.
+Source: Kaggle
 
----
-
-## 🎯 Project Objectives
-
-- Load the dataset using Pandas.
-- Analyze the dataset.
-- Detect missing values.
-- Detect duplicate records.
-- Remove duplicate rows.
-- Remove extra white spaces.
-- Standardize text formatting.
-- Validate email addresses (if available).
-- Export cleaned data as JSON.
-- Build an automated data cleaning pipeline.
+The dataset contains information about Android applications available on the Google Play Store.
 
 ---
 
-## 🛠 Technologies Used
+## Data Cleaning Steps
 
-- Python 3
-- Pandas
-- Object-Oriented Programming (OOP)
-- Git & GitHub
+1. Load the dataset
+2. Display dataset information
+3. Check missing values
+4. Check duplicate records
+5. Remove duplicate records
+6. Clean the Installs column
+7. Clean the Price column
+8. Clean the Size column
+9. Clean the Reviews column
+10. Handle missing values
+11. Display dataset summary
+12. Save cleaned dataset
 
 ---
 
-## 📁 Workflow
+## How to Run
 
-```
-Raw Dataset
-      │
-      ▼
-Load Dataset (main.py)
-      │
-      ▼
-Analyze Dataset
-      │
-      ▼
-Clean Data (cleaner.py)
-      │
-      ▼
-Run Cleaning Pipeline
-      │
-      ▼
-Export Cleaned Data (exporter.py)
-      │
-      ▼
-JSON Output
+### Clone the repository
+
+```bash
+git clone <repository-url>
 ```
 
----
+### Move to project folder
 
-## 🚀 Features
+```bash
+cd Data-Cleaning-Pipeline
+```
 
-- Load CSV dataset
-- Data inspection
-- Missing value detection
-- Duplicate detection and removal
-- Whitespace removal
-- Text standardization
-- Automated cleaning pipeline
-- JSON export
-- Modular Python code
-
----
-
-## ▶️ How to Run
-
-Install dependencies:
+### Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the project:
+### Run the project
 
 ```bash
 python main.py
@@ -118,29 +111,72 @@ python main.py
 
 ---
 
-## 📤 Expected Output
+## Output
 
-The cleaned dataset will be exported to the `output` folder in JSON format after the cleaning pipeline is completed.
+The cleaned files are saved in the **output** folder.
 
----
-
-## 📚 Learning Outcomes
-
-After completing this project, you will understand:
-
-- Data Cleaning
-- Data Preprocessing
-- Pandas
-- Python OOP
-- File Handling
-- JSON Export
-- Building Data Pipelines
-- GitHub Project Management
+```
+cleaned_googleplaystore.csv
+cleaned_googleplaystore.json
+```
 
 ---
 
-## 👨‍💻 Author
+## OOP Classes
 
-**SAFOORA**
+### DataCleaner
 
-Data Cleaning Pipeline Project using Python and Pandas.
+Responsible for:
+
+- Loading data
+- Cleaning data
+- Handling missing values
+- Removing duplicates
+- Saving cleaned dataset
+
+### Exporter
+
+Responsible for:
+
+- Exporting CSV file
+- Exporting JSON file
+
+---
+
+## Sample Output
+
+```
+Dataset Loaded Successfully!
+
+Duplicates Removed!
+
+Installs Cleaned!
+
+Price Cleaned!
+
+Size Cleaned!
+
+Reviews Cleaned!
+
+Missing Values Handled!
+
+Cleaned Dataset Saved Successfully!
+
+CSV File Exported Successfully!
+
+JSON File Exported Successfully!
+```
+
+---
+
+## Author
+
+**Safoora**
+
+BS Artificial Intelligence Student
+
+---
+
+## License
+
+This project is created for learning and educational purposes.
