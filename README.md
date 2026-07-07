@@ -1,182 +1,117 @@
-# Data Cleaning Pipeline
+# Duplicate Rows Detection & Removal
 
-## Project Overview
+## Overview
 
-This project is a simple Data Cleaning Pipeline developed using **Python**, **Pandas**, and **Object-Oriented Programming (OOP)**. It cleans the Google Play Store dataset by handling missing values, removing duplicate records, cleaning columns, and exporting the cleaned data.
+Duplicate records are repeated rows that contain the same information. These duplicates can negatively impact data analysis, visualization, and machine learning models by introducing redundancy and bias.
 
----
-
-## Features
-
-- Load dataset
-- Display dataset information
-- Check missing values
-- Check duplicate records
-- Remove duplicates
-- Clean Installs column
-- Clean Price column
-- Clean Size column
-- Clean Reviews column
-- Handle missing values
-- Display dataset summary
-- Export cleaned dataset to CSV
-- Export cleaned dataset to JSON
+This module identifies duplicate rows in a dataset and removes them while keeping the first occurrence, resulting in a cleaner and more reliable dataset.
 
 ---
 
-## Technologies Used
+## Objective
 
-- Python
-- Pandas
-- Object-Oriented Programming (OOP)
-
----
-
-## Project Structure
-
-```
-Data-Cleaning-Pipeline/
-│
-├── input/
-│   └── googleplaystore.csv
-│
-├── output/
-│   ├── cleaned_googleplaystore.csv
-│   └── cleaned_googleplaystore.json
-│
-├── tests/
-│   └── test_cleaner.py
-│
-├── cleaner.py
-├── exporter.py
-├── main.py
-├── requirements.txt
-└── README.md
-```
+- Detect duplicate rows in the dataset.
+- Display the total number of duplicate records.
+- Remove duplicate rows.
+- Improve overall data quality.
+- Prepare the dataset for further preprocessing and analysis.
 
 ---
 
-## Dataset
+## Implementation
 
-**Dataset Name:** Google Play Store Apps
+The duplicate handling process is implemented using the Pandas library.
 
-Source: Kaggle
+### Methods Used
 
-The dataset contains information about Android applications available on the Google Play Store.
-
----
-
-## Data Cleaning Steps
-
-1. Load the dataset
-2. Display dataset information
-3. Check missing values
-4. Check duplicate records
-5. Remove duplicate records
-6. Clean the Installs column
-7. Clean the Price column
-8. Clean the Size column
-9. Clean the Reviews column
-10. Handle missing values
-11. Display dataset summary
-12. Save cleaned dataset
+- `duplicated()` – Identifies duplicate rows.
+- `drop_duplicates()` – Removes duplicate rows while retaining the first occurrence.
 
 ---
 
-## How to Run
+## Functions
 
-### Clone the repository
+### `check_duplicates()`
 
-```bash
-git clone <repository-url>
-```
+This function:
 
-### Move to project folder
+- Counts duplicate rows.
+- Displays the total number of duplicates found.
+- Helps identify redundant records before cleaning.
 
-```bash
-cd Data-Cleaning-Pipeline
-```
+### `remove_duplicates()`
 
-### Install dependencies
+This function:
 
-```bash
-pip install -r requirements.txt
-```
-
-### Run the project
-
-```bash
-python main.py
-```
+- Removes duplicate rows from the dataset.
+- Displays the dataset size before cleaning.
+- Displays the dataset size after cleaning.
+- Reports the number of duplicate rows removed.
 
 ---
 
-## Output
+## Example
 
-The cleaned files are saved in the **output** folder.
+```python
+cleaner.load_data()
 
+cleaner.check_duplicates()
+
+cleaner.remove_duplicates()
 ```
-cleaned_googleplaystore.csv
-cleaned_googleplaystore.json
-```
-
----
-
-## OOP Classes
-
-### DataCleaner
-
-Responsible for:
-
-- Loading data
-- Cleaning data
-- Handling missing values
-- Removing duplicates
-- Saving cleaned dataset
-
-### Exporter
-
-Responsible for:
-
-- Exporting CSV file
-- Exporting JSON file
 
 ---
 
 ## Sample Output
 
-```
-Dataset Loaded Successfully!
+```text
+========== DUPLICATE ROWS ==========
+Duplicate Rows Found : 483
 
-Duplicates Removed!
+========== REMOVING DUPLICATES ==========
+Rows Before Cleaning : 10841
+Rows After Cleaning  : 10358
+Duplicate Rows Removed : 483
 
-Installs Cleaned!
-
-Price Cleaned!
-
-Size Cleaned!
-
-Reviews Cleaned!
-
-Missing Values Handled!
-
-Cleaned Dataset Saved Successfully!
-
-CSV File Exported Successfully!
-
-JSON File Exported Successfully!
+Duplicate removal completed successfully!
 ```
 
 ---
 
-## Author
+## Benefits
 
-**Safoora**
-
-BS Artificial Intelligence Student
+- Eliminates redundant records.
+- Improves data consistency.
+- Prevents duplicate data from affecting analysis.
+- Enhances machine learning model performance.
+- Reduces unnecessary storage usage.
+- Produces a cleaner and more reliable dataset.
 
 ---
 
-## License
+## Technologies Used
 
-This project is created for learning and educational purposes.
+- Python 3
+- Pandas
+
+---
+
+## Files
+
+```
+Data-Cleaning-Pipeline/
+│
+├── data/
+│   └── dataset.csv
+│
+├── main.py
+├── data_cleaner.py
+├── README.md
+└── requirements.txt
+```
+
+---
+
+## Conclusion
+
+Duplicate row detection and removal is an essential step in any data cleaning pipeline. By eliminating redundant records, the dataset becomes more accurate, consistent, and ready for data analysis, visualization, and machine learning applications.
