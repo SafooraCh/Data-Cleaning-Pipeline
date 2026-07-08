@@ -21,10 +21,21 @@ class DataCleaner:
         print("\nFirst 5 Rows:")
         print(self.df.head())
 
-    # # Check Missing Values
-    # def check_missing_values(self):
-    #     print("\nMissing Values:")
-    #     print(self.df.isnull().sum())
+    # Check Missing Values
+    def check_missing_values(self):
+        print("\nMissing Values:")
+        print(self.df.isnull().sum())
+
+    # Handle Missing Values
+    def handle_missing_values(self):
+        for column in self.df.columns:
+            if self.df[column].dtype == "object":
+                self.df[column] = self.df[column].fillna(self.df[column].mode()[0])
+            else:
+                self.df[column] = self.df[column].fillna(0)
+
+        print("\nMissing Values After Handling:")
+        print(self.df.isnull().sum())
 
     # Check Duplicate Rows
     def check_duplicates(self):
@@ -34,6 +45,7 @@ class DataCleaner:
     def remove_duplicates(self):
         self.df.drop_duplicates(inplace=True)
         print("\nDuplicates Removed!")
+
 
     # # Clean Installs Column
     # def clean_installs(self):

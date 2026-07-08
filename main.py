@@ -6,16 +6,16 @@ cleaner = DataCleaner("input/hotel_bookings.csv")
 cleaner.load_data()
 cleaner.dataset_info()
 
-# cleaner.check_missing_values()
+cleaner.check_missing_values()
 cleaner.check_duplicates()
 cleaner.remove_duplicates()
+cleaner.handle_missing_values()
 
 # cleaner.clean_installs()
 # cleaner.clean_price()
 # cleaner.clean_size()
 # cleaner.clean_reviews()
 
-# cleaner.handle_missing_values()
 
 # print("\nAfter Cleaning:")
 # cleaner.check_missing_values()
