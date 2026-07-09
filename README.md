@@ -12,6 +12,8 @@ This project is made in Python using Pandas. It loads a CSV file and performs ba
 - Fill missing values
 - Check duplicate rows
 - Remove duplicate rows
+- Fix data types
+- generate statistical summary
 
 ## Library
 
