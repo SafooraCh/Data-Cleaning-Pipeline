@@ -14,6 +14,7 @@ This project is made in Python using Pandas. It loads a CSV file and performs ba
 - Remove duplicate rows
 - Fix data types
 - generate statistical summary
+- export clean save file to json and csv
 
 ## Library
 
