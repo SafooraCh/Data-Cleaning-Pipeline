@@ -12,7 +12,7 @@ def test_load_data():
     cleaner.load_data()
 
     assert cleaner.df is not None
-    print("✅ Test Passed: Dataset Loaded Successfully!")
+    print(" Test Passed: Dataset Loaded Successfully!")
 
 
 def test_remove_duplicates():
@@ -26,7 +26,7 @@ def test_remove_duplicates():
     after = len(cleaner.df)
 
     assert after <= before
-    print("✅ Test Passed: Duplicates Removed Successfully!")
+    print(" Test Passed: Duplicates Removed Successfully!")
 
 
 test_load_data()
