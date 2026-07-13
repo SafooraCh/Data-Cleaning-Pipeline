@@ -63,7 +63,10 @@ class DataCleaner:
         print("\nStatistical Summary:")
         print(self.df.describe())
 
-
+    # Save Dataset
+    def save_data(self):
+        self.df.to_csv("output/cleaned_hotel_bookings.csv", index=False)
+        print("\nCleaned Dataset Saved Successfully!")
 
         
     # # Clean Installs Column

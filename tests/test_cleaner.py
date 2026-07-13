@@ -8,7 +8,7 @@ from cleaner import DataCleaner
 
 
 def test_load_data():
-    cleaner = DataCleaner("input/googleplaystore.csv")
+    cleaner = DataCleaner("input/hotel_bookings.csv")
     cleaner.load_data()
 
     assert cleaner.df is not None
@@ -16,7 +16,7 @@ def test_load_data():
 
 
 def test_remove_duplicates():
-    cleaner = DataCleaner("input/googleplaystore.csv")
+    cleaner = DataCleaner("input/hotel_bookings.csv")
     cleaner.load_data()
 
     before = len(cleaner.df)
