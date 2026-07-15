@@ -15,10 +15,12 @@ This project is made in Python using Pandas. It loads a CSV file and performs ba
 - Fix data types
 - generate statistical summary
 - export clean save file to json and csv
+- performing test-train and prediction on json file
 
 ## Library
 
 - pandas
+  -sklearn
 
 ## Run
 
