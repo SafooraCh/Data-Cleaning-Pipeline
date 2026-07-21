@@ -71,6 +71,8 @@ cleaner.check_duplicates()
 
 # Remove Duplicates
 cleaner.remove_duplicates()
+# Handle Outliers
+cleaner.handle_outliers() 
 
 # Handle Missing Values
 cleaner.handle_missing_values()

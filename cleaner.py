@@ -201,7 +201,7 @@ class DataCleaner:
 
         print("\nFirst 5 Rows")
         print(self.data.head())
-
+    
     # ==========================================
     # Dataset Information
     # ==========================================
@@ -215,6 +215,30 @@ class DataCleaner:
 
         print("\nColumn Names:")
         print(self.data.columns.tolist())
+
+     # ==========================================
+    # Handle Outliers (IQR Method)
+    # ==========================================
+    def handle_outliers(self):
+
+        columns = ["age", "balance", "day", "duration", "campaign", "previous"]
+
+        for column in columns:
+
+            Q1 = self.data[column].quantile(0.25)
+            Q3 = self.data[column].quantile(0.75)
+
+            IQR = Q3 - Q1
+
+            lower = Q1 - (1.5 * IQR)
+            upper = Q3 + (1.5 * IQR)
+
+            self.data = self.data[
+                (self.data[column] >= lower) &
+                (self.data[column] <= upper)
+            ]
+
+        print("Outliers handled successfully!")
 
     # ==========================================
     # Data Types
