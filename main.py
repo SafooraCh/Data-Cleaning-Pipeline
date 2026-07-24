@@ -57,6 +57,8 @@ cleaner.handle_missing_values()
 cleaner.fix_data_types()
 
 
+# Visualize Data
+cleaner.visualize_data()
 # Handle Outliers
 # Uses IQR Capping Instead of Deleting Rows
 cleaner.handle_outliers()
@@ -70,8 +72,6 @@ cleaner.statistical_summary()
 cleaner.unique_values()
 
 
-# Visualize Data
-cleaner.visualize_data()
 
 
 # Save Clean Dataset

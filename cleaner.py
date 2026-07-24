@@ -181,6 +181,40 @@ class DataCleaner:
         print(
             f"Removed {before - after} duplicate rows."
         )
+        def visualize_data(self):
+                 # ==========================================
+                # Boxplots of Numerical Features
+                # ==========================================
+        
+                numerical_columns = [
+                    "age",
+                    "balance",
+                    "day",
+                    "duration",
+                    "campaign",
+                    "pdays",
+                    "previous"
+                ]
+        
+                plt.figure(figsize=(15, 10))
+        
+                for i, column in enumerate(numerical_columns, 1):
+        
+                    plt.subplot(3, 3, i)
+        
+                    sns.boxplot(
+                        x=self.data[column]
+                    )
+        
+                    plt.title(column)
+        
+                plt.tight_layout()
+        
+                plt.savefig("output/boxplots.png")
+        
+                plt.close()
+        
+                print("Boxplots Saved Successfully!")
 
     # ==========================================
     # Handle Outliers Using IQR Capping
@@ -396,6 +430,7 @@ class DataCleaner:
         print(
             "Visualizations saved successfully!"
         )
+       
 
     # ==========================================
     # Save Clean Dataset
